@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <TPSS_Captcha>
+            <active>true</active>
+            <codePool>local</codePool>
+        </TPSS_Captcha>
+    </modules>
+</config>

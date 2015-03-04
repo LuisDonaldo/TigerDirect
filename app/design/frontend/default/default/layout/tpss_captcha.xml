@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout>
+	<contacts_index_index>
+        <update handle="captcha_index_index"/>
+    </contacts_index_index>
+	<captcha_index_index translate="label">
+        <label>Contact Us Form</label>
+        <reference name="head">
+            <action method="addJs"><file>mage/captcha.js</file></action>
+        </reference>
+        <reference name="contactForm">
+			<action method="setTemplate"><template>tpss/contacts.phtml</template></action>
+        </reference>
+    </captcha_index_index>
+</layout>

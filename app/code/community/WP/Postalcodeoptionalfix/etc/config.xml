@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+
+    <modules>
+        <WP_Postalcodeoptionalfix>
+            <version>1.0.0</version>
+        </WP_Postalcodeoptionalfix>
+    </modules>
+
+    <global>
+        <models>
+            <customer>
+                <rewrite>
+                    <form>WP_Postalcodeoptionalfix_Model_Customer_Form</form>
+                </rewrite>
+            </customer>
+        </models>
+    </global>
+
+</config>

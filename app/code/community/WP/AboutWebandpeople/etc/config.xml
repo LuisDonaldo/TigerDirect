@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <WP_AboutWebandpeople>
+            <version>2.0.2</version>
+        </WP_AboutWebandpeople>
+    </modules>
+
+    <global>
+        <blocks>
+            <aboutwebandpeople>
+                <class>WP_AboutWebandpeople_Block</class>
+            </aboutwebandpeople>
+        </blocks>
+        <helpers>
+            <aboutwebandpeople>
+                <class>WP_AboutWebandpeople_Helper</class>
+            </aboutwebandpeople>
+        </helpers>
+    </global>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <about_webandpeople translate="title" module="aboutwebandpeople">
+                                            <title><![CDATA[Web & People: About Us]]></title>
+                                            <sort_order>1000</sort_order>
+                                        </about_webandpeople>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>

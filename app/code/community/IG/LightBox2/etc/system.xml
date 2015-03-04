@@ -1,0 +1,896 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * IDEALIAGroup srl
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.idealiagroup.com/magento-ext-license.html
+ *
+ * @category   IG
+ * @package    IG_LightBox2
+ * @copyright  Copyright (c) 2011-2012 IDEALIAGroup srl (http://www.idealiagroup.com)
+ * @license    http://www.idealiagroup.com/magento-ext-license.html
+ */
+-->
+<config>
+    <tabs>
+		<ig translate="label" module="ig_lightbox2">
+            <label>IdealiaGroup</label>
+            <sort_order>200</sort_order>
+		</ig>
+    </tabs>
+    <sections>
+		<ig_lightbox2 translate="label" module="ig_lightbox2">
+			<label>IG LightBox2</label>
+			<tab>ig</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>10</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label">
+					<label>General</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<type translate="label">
+							<label>Lightbox Type</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ig_lightbox2/adminhtml_system_config_source_type</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</type>
+						<max_width translate="label">
+							<label>Maximum width</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Maximum image width. Leave empty for no resize. Some lightbox model does not automatically fits to screen).</comment>
+						</max_width>
+						<max_height translate="label">
+							<label>Maximum height</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Maximum image width. Leave empty for no resize. Some lightbox model does not automatically fits to screen).</comment>
+						</max_height>
+						<img_width translate="label">
+							<label>Image width</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</img_width>
+						<img_height translate="label">
+							<label>Image height</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</img_height>
+						<img_frame translate="label">
+							<label>Display image frame</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>70</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</img_frame>
+						<thu_width translate="label">
+							<label>Thumbnail width</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>80</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</thu_width>
+						<thu_height translate="label">
+							<label>Thumbnail height</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>90</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</thu_height>
+						<thu_frame translate="label">
+							<label>Display thumbnail frame</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</thu_frame>
+					</fields>
+				</general>
+								
+				<type-lightbox>
+					<label>Lightbox - Traditional Lightbox</label>
+					<sort_order>20</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<overlayBgColor translate="label">
+							<label>Overlay Background Color</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Overlay color in HTML notation.</comment>
+						</overlayBgColor>
+						<overlayOpacity translate="label">
+							<label>Overlay Background Opacity</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Overlay opacity (from 0.0 to 1.0).</comment>
+						</overlayOpacity>
+						<containerBorderSize translate="label">
+							<label>Container border size</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>The padding CSS information used in the container image box.</comment>
+						</containerBorderSize>
+						<containerResizeSpeed translate="label">
+							<label>Container resize speed</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>The duration of resize effect in the container image box.</comment>
+						</containerResizeSpeed>
+						<fixedNavigation translate="label">
+							<label>Fixed navigation</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>If active the navigation (next and prev button) will be fixed in the interface.</comment>
+						</fixedNavigation>
+						<txtImage translate="label">
+							<label>Text "image"</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Text "Image" used in the image caption.</comment>
+						</txtImage>
+						<txtOf translate="label">
+							<label>Text "of"</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>70</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Text "of" used in the image caption.</comment>
+						</txtOf>
+					</fields>
+				</type-lightbox>
+					
+				<type-fancybox>
+					<label>Lightbox - Fancybox</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>30</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<padding translate="label">
+							<label>Padding</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Space between FancyBox wrapper and content</comment>
+						</padding>
+						<margin translate="label">
+							<label>Margin</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Space between viewport and FancyBox wrapper</comment>
+						</margin>
+						<opacity translate="label">
+							<label>Opacity</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>When active, transparency of content is changed for elastic transitions</comment>
+						</opacity>
+						<modal translate="label">
+							<label>Modal</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>When active, 'overlayShow' is set to 'yes' and 'hideOnOverlayClick', 'hideOnContentClick', 'enableEscapeButton', 'showCloseButton' are set to 'no'</comment>
+						</modal>
+						<cyclic translate="label">
+							<label>Cyclic</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>When active, galleries will be cyclic, allowing you to keep pressing next/back.</comment>
+						</cyclic>
+						<autoScale translate="label">
+							<label>Auto Fit</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>If active, FancyBox is scaled to fit in viewport.</comment>
+						</autoScale>
+						<centerOnScroll translate="label">
+							<label>Center On Scroll</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>70</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>When active, FancyBox is centered while scrolling page.</comment>
+						</centerOnScroll>
+						<hideOnOverlayClick translate="label">
+							<label>Hide On Overlay Click</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>80</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Toggle if clicking the overlay should close FancyBox.</comment>
+						</hideOnOverlayClick>
+						<hideOnContentClick translate="label">
+							<label>Hide On Content Click</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>90</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Toggle if clicking the content should close FancyBox.</comment>
+						</hideOnContentClick>
+						<overlayShow translate="label">
+							<label>Show Overlay</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Toggle overlay.</comment>
+						</overlayShow>
+						<overlayOpacity translate="label">
+							<label>Overlay opacity</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Overlay opacity (from 0.0 to 1.0).</comment>
+						</overlayOpacity>
+						<overlayColor translate="label">
+							<label>Overlay color</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Overlay color in HTML notation.</comment>
+						</overlayColor>
+						<titleShow translate="label">
+							<label>Show title</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>130</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</titleShow>
+						<titlePosition translate="label">
+							<label>Image label position</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ig_lightbox2/adminhtml_system_config_source_fancybox_titleposition</source_model>
+							<sort_order>140</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</titlePosition>
+						<transitionIn translate="label">
+							<label>Transition-IN</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ig_lightbox2/adminhtml_system_config_source_transition</source_model>
+							<sort_order>150</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</transitionIn>
+						<transitionOut translate="label">
+							<label>Transition-OUT</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ig_lightbox2/adminhtml_system_config_source_transition</source_model>
+							<sort_order>160</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</transitionOut>
+						<speedIn translate="label">
+							<label>Speed-IN</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>170</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</speedIn>
+						<speedOut translate="label">
+							<label>Speed-OUT</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>180</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</speedOut>
+						<changeSpeed translate="label">
+							<label>Change speed</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>190</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Speed while changing from one photo to another.</comment>
+						</changeSpeed>
+						<changeFade translate="label">
+							<label>Change fade</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ig_lightbox2/adminhtml_system_config_source_speed</source_model>
+							<sort_order>200</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Fade speed while changing from one photo to another.</comment>
+						</changeFade>
+						<easingIn translate="label">
+							<label>Easing-IN</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>210</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Easing for IN animation (jQuery easing).</comment>
+						</easingIn>
+						<easingOut translate="label">
+							<label>Easing-OUT</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>220</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Easing for OUT animation (jQuery easing).</comment>
+						</easingOut>
+						<showCloseButton translate="label">
+							<label>Show close button</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>230</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</showCloseButton>
+						<showNavArrows translate="label">
+							<label>Show navigation arrows</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>240</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</showNavArrows>
+						<enableEscapeButton translate="label">
+							<label>Enable ESC key</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>240</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Toggle if pressing Esc button closes FancyBox.</comment>
+						</enableEscapeButton>
+					</fields>
+				</type-fancybox>
+				
+				<type-prettyphoto>
+					<label>Lightbox - PrettyPhoto</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>40</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<animation_speed translate="label">
+							<label>Animation Speed</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ig_lightbox2/adminhtml_system_config_source_speed</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</animation_speed>
+						<slideshow translate="label">
+							<label>Slideshow interval</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Set 0 to disable</comment>
+						</slideshow>
+						<autoplay_slideshow translate="label">
+							<label>Automatically start slideshow</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</autoplay_slideshow>
+						<opacity translate="label">
+							<label>Opacity</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Opacity (from 0.0 and 1.0)</comment>
+						</opacity>
+						<show_title translate="label">
+							<label>Show image label</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_title>
+						<allow_resize translate="label">
+							<label>Automatically fit images to viewport</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Resize photo bigger than viewport</comment>
+						</allow_resize>
+						<counter_separator_label translate="label">
+							<label>Counter separator</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>70</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>The separator for the gallery counter 1 "of" 2</comment>
+						</counter_separator_label>
+						<theme>
+							<label>Theme</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ig_lightbox2/adminhtml_system_config_source_prettybox_theme</source_model>
+							<sort_order>80</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</theme>
+						<horizontal_padding translate="label">
+							<label>Horizontal padding</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>90</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>The padding on each side of the picture</comment>
+						</horizontal_padding>
+						<hideflash translate="label">
+							<label>Hide Flash</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Hides all the flash object on a page, set to 'yes' if flash appears over prettyPhoto</comment>
+						</hideflash>
+						<modal translate="label">
+							<label>Modal</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>110</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>If set to 'yes', only the close button will close the window</comment>
+						</modal>
+						<deeplinking translate="label">
+							<label>Deep Linking</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>120</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Allow prettyPhoto to update the url to enable deeplinking.</comment>
+						</deeplinking>
+						<overlay_gallery translate="label">
+							<label>Overlay Gallery</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>130</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>If set to 'yes', a gallery will overlay the fullscreen image on mouse over.</comment>
+						</overlay_gallery>
+						<keyboard_shortcuts translate="label">
+							<label>Keyboard Shortcut</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>140</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Toggle navigation via keyboard.</comment>
+						</keyboard_shortcuts>
+						<ie6_fallback translate="label">
+							<label>IE6 Fallback</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>150</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Fallback for the foolish pepole using IE6.</comment>
+						</ie6_fallback>
+					</fields>
+				</type-prettyphoto>
+				
+				<type-colorbox>
+					<label>Lightbox - ColorBox</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>50</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<theme translate="label">
+							<label>Theme</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ig_lightbox2/adminhtml_system_config_source_colorbox_theme</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</theme>
+						<transition translate="label">
+							<label>Transition</label>
+							<frontend_type>select</frontend_type>
+							<source_model>ig_lightbox2/adminhtml_system_config_source_transition</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</transition>
+						<speed translate="label">
+							<label>Speed</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Sets the speed of the fade and elastic transitions, in milliseconds.</comment>
+						</speed>
+						<scalePhotos translate="label">
+							<label>Scale Photos</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>If active, Inner Width, Inner Height, Width, or Height have been defined, ColorBox will scale photos to fit within the those values.</comment>
+						</scalePhotos>
+						<opacity translate="label">
+							<label>Opacity</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>The overlay opacity level. Range: 0.0 to 1.0.</comment>
+						</opacity>
+						<returnFocus translate="label">
+							<label>Return Focus</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>If true, focus will be returned when ColorBox exits to the element it was launched from.</comment>
+						</returnFocus>
+						<preloading translate="label">
+							<label>Images Preloading</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>70</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Allows for preloading of 'Next' and 'Previous' photos, after the current content has finished loading.</comment>
+						</preloading>
+						<overlayClose translate="label">
+							<label>Overlay Close</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>80</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Toggle closing ColorBox by clicking on the background overlay.</comment>
+						</overlayClose>
+						<escKey translate="label">
+							<label>ESC Key</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>90</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Toggle closing colorbox on 'esc' key press.</comment>
+						</escKey>
+						<arrowKey translate="label">
+							<label>Arrow Keys</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Toggle the left and right arrow keys from navigating between the items in a group.</comment>
+						</arrowKey>
+						<loop translate="label">
+							<label>Loop</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>110</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Toggle the ability to loop back to the beginning of the group when on the last element.</comment>
+						</loop>
+						<current translate="label">
+							<label>Current Text</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Text for the group counter. {current} and {total} are detected and replaced with actual numbers while ColorBox runs.</comment>
+						</current>
+						<previous translate="label">
+							<label>Previous Text</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>130</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Text for the previous button.</comment>
+						</previous>
+						<next translate="label">
+							<label>Next Text</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>140</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Text for the next button.</comment>
+						</next>
+						<close translate="label">
+							<label>Close Text</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>150</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Text for the close button.</comment>
+						</close>
+						<width translate="label">
+							<label>Width</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>160</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Set a fixed total width. This includes borders and buttons. Example: "100%", "500px", or 500. Leave empty for autosize.</comment>
+						</width>
+						<height translate="label">
+							<label>Height</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>170</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Set a fixed total height. This includes borders and buttons. Example: "100%", "500px", or 500. Leave empty for autosize.</comment>
+						</height>
+						<innerWidth translate="label">
+							<label>Inner Width</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>180</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>This is an alternative to 'width' used to set a fixed inner width. This excludes borders and buttons. Example: "50%", "500px", or 500. Leave empty for autosize.</comment>
+						</innerWidth>
+						<innerHeight translate="label">
+							<label>Inner Height</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>190</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>This is an alternative to 'height' used to set a fixed inner height. This excludes borders and buttons. Example: "50%", "500px", or 500. Leave empty for autosize.</comment>
+						</innerHeight>
+						<initialWidth translate="label">
+							<label>Initial Width</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>200</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Set the initial width, prior to any content being loaded.</comment>
+						</initialWidth>
+						<initialHeight translate="label">
+							<label>Initial Height</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>210</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Set the initial height, prior to any content being loaded.</comment>
+						</initialHeight>
+						<slideshow translate="label">
+							<label>Slideshow</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>220</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Toggle slideshow.</comment>
+						</slideshow>
+						<slideshowSpeed translate="label">
+							<label>Slideshow</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>230</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Sets the speed of the slideshow, in milliseconds.</comment>
+						</slideshowSpeed>
+						<slideshowAuto translate="label">
+							<label>Auto Start Slideshow</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>240</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>If active the slideshow will automatically start to play.</comment>
+						</slideshowAuto>
+						<slideshowStart translate="label">
+							<label>Slideshow Start Text</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>250</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Text for the slideshow start button.</comment>
+						</slideshowStart>
+						<slideshowStop translate="label">
+							<label>Slideshow Stop Text</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>260</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Text for the slideshow stop button.</comment>
+						</slideshowStop>
+						<fixed translate="label">
+							<label>Fixed</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>270</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>If active, ColorBox will be displayed in a fixed position within the visitor's viewport. This is unlike the default absolute positioning relative to the document.</comment>
+						</fixed>
+						<top translate="label">
+							<label>Top position</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>280</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Accepts a pixel or percent value (50, "50px", "10%"). Controls ColorBox's vertical positioning instead of using the default position of being centered in the viewport.</comment>
+						</top>
+						<bottom translate="label">
+							<label>Bottom position</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>290</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Accepts a pixel or percent value (50, "50px", "10%"). Controls ColorBox's vertical positioning instead of using the default position of being centered in the viewport.</comment>
+						</bottom>
+						<left translate="label">
+							<label>Left position</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>300</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Accepts a pixel or percent value (50, "50px", "10%"). Controls ColorBox's horizontal positioning instead of using the default position of being centered in the viewport.</comment>
+						</left>
+						<right translate="label">
+							<label>Left position</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>310</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Accepts a pixel or percent value (50, "50px", "10%"). Controls ColorBox's horizontal positioning instead of using the default position of being centered in the viewport.</comment>
+						</right>
+					</fields>
+				</type-colorbox>
+			</groups>
+        </ig_lightbox2>
+    </sections>
+</config>

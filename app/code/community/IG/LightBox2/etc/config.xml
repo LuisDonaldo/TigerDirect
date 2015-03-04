@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * IDEALIAGroup srl
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.idealiagroup.com/magento-ext-license.html
+ *
+ * @category   IG
+ * @package    IG_LightBox2
+ * @copyright  Copyright (c) 2011-2012 IDEALIAGroup srl (http://www.idealiagroup.com)
+ * @license    http://www.idealiagroup.com/magento-ext-license.html
+ */
+-->
+<config>
+	<modules>
+		<IG_LightBox2>
+			<version>1.0.0</version>
+		</IG_LightBox2>
+	</modules>
+	
+	<global>
+		<helpers>
+			<ig_lightbox2>
+				<class>IG_LightBox2_Helper</class>
+			</ig_lightbox2>
+        </helpers>
+		
+		<models>
+			<ig_lightbox2>
+				<class>IG_LightBox2_Model</class>
+			</ig_lightbox2>
+        </models>
+
+		<blocks>
+			<ig_lightbox2>
+				<class>IG_LightBox2_Block</class>
+			</ig_lightbox2>
+        </blocks>
+	</global>
+	
+	<frontend>
+		<layout>
+			<updates>
+				<ig_lightbox2 module="IG_LightBox2">
+					<file>ig_lightbox2.xml</file>
+				</ig_lightbox2>
+			</updates>
+		</layout>
+	</frontend>
+	
+	<adminhtml>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<ig_lightbox2 translate="title" module="ig_lightbox2">
+											<title>IG LightBox2</title>
+											<sort_order>50</sort_order>
+										</ig_lightbox2>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+    </adminhtml>
+
+	<default>
+		<ig_lightbox2>
+			<general>
+				<type>fancybox</type>
+				<max_width></max_width>
+				<max_height></max_height>
+				<img_width>265</img_width>
+				<img_height>265</img_height>
+				<img_frame>1</img_frame>
+				<thu_width>56</thu_width>
+				<thu_height>56</thu_height>
+				<thu_frame>1</thu_frame>
+			</general>
+			
+			<type-lightbox>
+				<overlayBgColor>#000</overlayBgColor>
+				<overlayOpacity>0.8</overlayOpacity>
+				<containerBorderSize>10</containerBorderSize>
+				<containerResizeSpeed>400</containerResizeSpeed>
+				<fixedNavigation>0</fixedNavigation>
+				<txtImage>Image</txtImage>
+				<txtOf>of</txtOf>
+			</type-lightbox>
+			
+			<type-fancybox>
+				<padding>10</padding>
+				<margin>20</margin>
+				<opacity>0</opacity>
+				<modal>0</modal>
+				<cyclic>1</cyclic>
+				<autoScale>1</autoScale>
+				<centerOnScroll>1</centerOnScroll>
+				<hideOnOverlayClick>1</hideOnOverlayClick>
+				<hideOnContentClick>0</hideOnContentClick>
+				<overlayShow>1</overlayShow>
+				<overlayOpacity>0.3</overlayOpacity>
+				<overlayColor>#333333</overlayColor>
+				<titleShow>1</titleShow>
+				<titlePosition>float</titlePosition>
+				<transitionIn>fade</transitionIn>
+				<transitionOut>fade</transitionOut>
+				<speedIn>300</speedIn>
+				<speedOut>300</speedOut>
+				<changeSpeed>300</changeSpeed>
+				<changeFade>fast</changeFade>
+				<easingIn>swing</easingIn>
+				<easingOut>swing</easingOut>
+				<showCloseButton>1</showCloseButton>
+				<showNavArrows>1</showNavArrows>
+				<enableEscapeButton>1</enableEscapeButton>
+			</type-fancybox>
+			
+			<type-prettyphoto>
+				<animation_speed>fast</animation_speed>
+				<slideshow>5000</slideshow>
+				<autoplay_slideshow>0</autoplay_slideshow>
+				<opacity>0.8</opacity>
+				<show_title>1</show_title>
+				<allow_resize>1</allow_resize>
+				<counter_separator_label>/</counter_separator_label>
+				<theme>pp_default</theme>
+				<horizontal_padding>20</horizontal_padding>
+				<hideflash>0</hideflash>
+				<modal>0</modal>
+				<deeplinking>1</deeplinking>
+				<overlay_gallery>1</overlay_gallery>
+				<keyboard_shortcuts>outside</keyboard_shortcuts>
+				<ie6_fallback>1</ie6_fallback>
+			</type-prettyphoto>
+			
+			<type-colorbox>
+				<theme>theme1</theme>
+				<transition>elastic</transition>
+				<speed>350</speed>
+				<scalePhotos>true</scalePhotos>
+				<opacity>0.85</opacity>
+				<returnFocus>1</returnFocus>
+				<preloading>1</preloading>
+				<overlayClose>1</overlayClose>
+				<escKey>1</escKey>
+				<arrowKey>1</arrowKey>
+				<loop>1</loop>
+				<current>image {current} of {total}</current>
+				<previous>previous</previous>
+				<next>next</next>
+				<close>close</close>
+				<width></width>
+				<height></height>
+				<innerWidth></innerWidth>
+				<innerHeight></innerHeight>
+				<initialWidth>300</initialWidth>
+				<initialHeight>100</initialHeight>
+				<slideshow>0</slideshow>
+				<slideshowSpeed>2500</slideshowSpeed>
+				<slideshowAuto>1</slideshowAuto>
+				<slideshowStart>Start slideshow</slideshowStart>
+				<slideshowStop>Stop slideshow</slideshowStop>
+				<fixed>1</fixed>
+				<top>0</top>
+				<bottom>0</bottom>
+				<left>0</left>
+				<right>0</right>
+			</type-colorbox>
+		</ig_lightbox2>
+	</default>
+</config>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <WP_DemoCss>
+            <version>1.0.0</version>
+        </WP_DemoCss>
+    </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <democss>
+                    <file>webandpeople/democss.xml</file>
+                </democss>
+            </updates>
+        </layout>
+    </frontend>
+</config>

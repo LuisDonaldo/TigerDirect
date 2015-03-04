@@ -1,0 +1,78 @@
+<?php
+/**
+ * IDEALIAGroup srl
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.idealiagroup.com/magento-ext-license.html
+ *
+ * @category   IG
+ * @package    IG_LightBox2
+ * @copyright  Copyright (c) 2011-2012 IDEALIAGroup srl (http://www.idealiagroup.com)
+ * @license    http://www.idealiagroup.com/magento-ext-license.html
+ */
+?>
+<?php
+$_product = $this->getProduct();
+$_helper = $this->helper('catalog/output');
+
+$imageUrl = $this->helper('catalog/image')->init($_product, 'image');
+if ($this->getMaxWidth() || $this->getMaxHeight())
+{
+    $imageUrl
+        ->keepAspectRatio(true)
+        ->keepFrame(false)
+        ->constrainOnly(true)
+        ->resize($this->getMaxWidth(), $this->getMaxHeight());
+}
+
+?>
+<p class="product-image">
+    <a class="ig_lightbox2" rel="ig_lightbox2[gal]" href="<?php echo $imageUrl ?>" title="<?php echo $this->htmlEscape($this->getLabel()) ?>">
+        <img
+            id="image"
+            src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($this->getImageWidth(), $this->getImageHeight())->keepFrame($this->getImageFrame()) ?>"
+            alt="<?php echo $this->htmlEscape($this->getImageLabel()) ?>"
+            title="<?php echo $this->htmlEscape($this->getImageLabel()) ?>"
+        />
+    </a>
+</p>
+
+<?php if (count($this->getGalleryImages()) > 0): ?>
+<div class="more-views">
+    <h2><?php echo $this->__('More Views') ?></h2>
+    <ul>
+    <?php foreach ($this->getGalleryImages() as $_image): ?>
+    <?php
+        //if ($_product->getImage() ==  $_image->getFile())
+            //continue;
+
+        $imageUrl = $this->helper('catalog/image')
+            ->init($this->getProduct(), 'thumbnail', $_image->getFile());
+
+        if ($this->getMaxWidth() || $this->getMaxHeight())
+        {
+            $imageUrl
+                ->keepAspectRatio(true)
+                ->keepFrame(false)
+                ->constrainOnly(true)
+                ->resize($this->getMaxWidth(), $this->getMaxHeight());
+        }
+    ?>
+        <li>
+            <a class="ig_lightbox2" rel="ig_lightbox2[gal]" href="<?php echo $imageUrl ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>">
+                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($this->getThumbnailWidth(), $this->getThumbnailHeight())->keepFrame($this->getThumbnailFrame()); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+            </a>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>
+<script type="text/javascript">
+//<![CDATA[
+jQuery("a[rel^='ig_lightbox2']").prettyPhoto(<?php echo json_encode($this->getParams()) ?>);
+//]]>
+</script>

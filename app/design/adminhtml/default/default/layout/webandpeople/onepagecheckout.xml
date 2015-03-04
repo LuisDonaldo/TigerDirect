@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <wp_onepagecheckout_system_configuration>
+        <reference name="before_body_end">
+            <block type="adminhtml/template" name="onepagecheckout_js" as="onepagecheckout_js" template="webandpeople/onepagecheckout/js.phtml" />
+        </reference>
+    </wp_onepagecheckout_system_configuration>
+</layout>
